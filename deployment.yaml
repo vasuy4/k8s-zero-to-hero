@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment    # тип ресурса, манифест которого описываем
+metadata:
+  name: nginx
+  labels:
+    app: nginx      # 
+spec:
+  replicas: 3       # желаемое кол-во реплик, которое нам необходимо поддерживать
+  selector:         # 
+    matchLabels:
+      app: nginx
+  template:         # здесь указывается то, какие поды будут создаваться деплойментом
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx 
+        image: nginx:1.28
+        ports:
+        - containerPort: 80
