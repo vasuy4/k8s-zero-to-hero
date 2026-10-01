@@ -1,5 +1,12 @@
-project: k8s-zero-to-hero    # имя werf-проекта
+project: k8s-zero-to-hero # имя werf-проекта
 configVersion: 1
 ---
-image: ubuntu-test           # объявляется образ с логическим именем ubuntu-test
-dockerfile: Dockerfile.test  # образ собирается из файла Dockerfile.test
+image: ubuntu-test        # образ с логическим именем ubuntu-test
+from: ubuntu:22.04        # базовый образ (через from)
+git:                      # взять файлы из корня Git-репозитория / и добавить их в корень файловой системы образа /.
+- add: /
+  to: /
+shell:
+  install:                # 
+  - apt update
+  - apt install -y curl
