@@ -1,5 +1,5 @@
-project: k8s-zero-to-hero
+project: k8s-zero-to-hero    # имя werf-проекта
 configVersion: 1
 ---
-image: ubuntu-test
-dockerfile: Dockerfile.test
+image: ubuntu-test           # объявляется образ с логическим именем ubuntu-test
+dockerfile: Dockerfile.test  # образ собирается из файла Dockerfile.test
