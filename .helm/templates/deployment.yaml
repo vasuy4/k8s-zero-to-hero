@@ -21,4 +21,4 @@ spec:
         image: {{ .Values.werf.image.app }} # шаблонная переменная Helm, которую werf автоматически заполняет именем Docker-образа, собранного для приложения app
         command: ["/goapp"] # добавим команду для запуска приложения
         ports:
-        - containerPort: 80
+        - containerPort: 8080

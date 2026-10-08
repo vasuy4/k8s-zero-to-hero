@@ -21,4 +21,13 @@ import:
   add: /goapp
   to: /goapp
   after: install
-
+- image: build
+  add: /app/templates
+  to: /app/templates
+  after: install
+- image: build
+  add: /app/static
+  to: /app/static
+  after: install
+docker:
+  WORKDIR: /app
