@@ -9,4 +9,4 @@ git:                      # взять файлы из корня Git-репоз
 shell:                    # выполняет команды при сборке образа
   install:                # каждая стадия (beforeInstall, install, beforeSetup и setup кэшируются отдельно)
   - apt update
-  - apt install -y curl
+  - apt install -y vim
