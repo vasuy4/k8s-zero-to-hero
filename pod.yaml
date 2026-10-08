@@ -8,4 +8,3 @@ spec:          # спецификация, в которой описываем 
     image: nginx:1.27
     ports:
     - containerPort: 80
- 
