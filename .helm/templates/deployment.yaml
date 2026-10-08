@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       imagePullSecrets: # указываем имя нашего секрета
-      - name: registrySecret # подсказка для k8s, что данные для авторизации в container registry находятся в registrySecret
+      - name: registrysecret # подсказка для k8s, что данные для авторизации в container registry находятся в registrysecret
       containers:
       - name: nginx 
         image: {{ .Values.werf.image.app }} # шаблонная переменная Helm, которую werf автоматически заполняет именем Docker-образа, собранного для приложения app
