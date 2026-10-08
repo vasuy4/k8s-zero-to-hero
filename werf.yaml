@@ -1,12 +1,12 @@
-project: k8s-zero-to-hero # имя werf-проекта
+project: k8s-zero-to-hero # имя werf-проекта (имя чарта)
 configVersion: 1
 ---
 image: ubuntu-test        # образ с логическим именем ubuntu-test
-from: ubuntu:22.04        # базовый образ (через from)
-git:                      # взять файлы из корня Git-репозитория / и добавить их в корень файловой системы образа /.
+from: ubuntu:22.04        # базовый образ (через from). Описываем без Dockerfile (механизм сборки Stapel)
+git:                      # взять файлы из корня Git-репозитория / 
 - add: /
-  to: /
-shell:
-  install:                # 
+  to: /                   # и добавить их в корень файловой системы образа /.
+shell:                    # выполняет команды при сборке образа
+  install:                # каждая стадия (beforeInstall, install, beforeSetup и setup кэшируются отдельно)
   - apt update
   - apt install -y curl
